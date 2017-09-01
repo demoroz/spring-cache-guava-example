@@ -1,0 +1,13 @@
+= Spring Boot Guava Cache Sample
+
+This example demonstrates the Guava caching configuration. Spring's caching
+abstraction is supported by many caching libraries, including Guava.
+
+Purpose of this example is caching of the Session object previously loaded from
+the database. In order to minimize database load application caches Session object
+for configured TTL (e.g. 10 seconds) so as soon as TTL will be exceeded Session object
+will be removed from the cache by the appropriate Cache Manager, Guava in our case.
+
+You can look at the `/metrics` endpoint to review the cache statistics of Guava
+caching provider. It also shows that the number of cached objects is not constant and
+objects are evicted from cached actually.
